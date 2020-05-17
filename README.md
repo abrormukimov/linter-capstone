@@ -43,6 +43,14 @@ Then you can have this in the package.json file which is added to your project.
 
 	4. A closing curly brace mustn't be followed by a trailing space;
 
+
+## How to Run Stylelint
+
+If you want to check your errors according to the stylint rules, Open your terminal and type the following command:
+
+	## 1. npx stylelint .
+
+
 ### Prerequisites
 
 This project runs on [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
@@ -58,7 +66,7 @@ clone the project locally
 
 In your terminal, change directory to the root of the project
 
-### Live version of the game
+### Live version of the project
 
 [Live Demo Link](https://repl.it/repls/GoldGiftedMention)
 
