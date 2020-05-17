@@ -101,7 +101,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - [Microverse](microverse.org)
-
+  ## Special thanks to [ioanniskousis](https://github.com/ioanniskousis)
 
 ## License
 
