@@ -1,34 +1,47 @@
 # CSS linter
 
-![screenshot](images/tictactoe.png)
+# Ruby Capstone Project
 
-# Game rules
+![screenshot](images/screenshot.png)
 
-> Tic-tac-toe (American English), noughts and crosses (British English), or Xs and Os is a game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
+# About the Project
 
-# Strategy
-
-A player can play a perfect game of tic-tac-toe (to win or at least, draw) if each time it is their turn to play, they choose the first available move from the following list, as used in Newell and Simon's 1972 tic-tac-toe program.
-
-1. Win: If the player has two in a row, they can place a third to get three in a row.
-2. Block: If the opponent has two in a row, the player must play the third themselves to block the opponent.
-3. Fork: Create an opportunity where the player has two ways to win (two non-blocked lines of 2).
-4. Blocking an opponent's fork: If there is only one possible fork for the opponent, the player should block it. Otherwise, the player should block all forks in any way that simultaneously allows them to create two in a row. Otherwise, the player should create a two in a row to force the opponent into defending, as long as it doesn't result in them creating a fork. For example, if "X" has two opposite corners and "O" has the center, "O" must not play a corner in order to win. (Playing a corner in this scenario creates a fork for "X" to win.)
-5. Center: A player marks the center. (If it is the first move of the game, playing on a corner gives the second player more opportunities to make a mistake and may therefore be the better choice; however, it makes no difference between perfect players.)
-6. Opposite corner: If the opponent is in the corner, the player plays the opposite corner.
-7. Empty corner: The player plays in a corner square.
-8. Empty side: The player plays in a middle square on any of the 4 sides.
+As front end developers we hope that the code we write will be shipped to production and enjoyed by the users of our product. We spend a huge amount of time ensuring that we write code that is free of bugs and errors. But how many of these errors can we figure out without actually running the code? This is where tests come in, though there are certainly things that tests will not pick up, or might not be tested for at all.
 
 ## Built With
 
 - Ruby
-- Visual Studio Code
-- Sublime Text
+- Sublime Text Editor
 
 
-## Getting Started
+## How to Use Stylelint
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+There are different ways to use Stylelint, such as installing a plugin for your favorite code editor, or a plugin for Post CSS, but we’re going to use the Command Line.
+
+Start linting by installing the NPM package on your machine. Open up your terminal and type the following command:
+
+	## 1. npm install -g stylelint
+
+The above command installs Stylelint globally. If you prefer to have it project-based, you can do so with the command below:
+
+	## 1. npm install stylelint --save-dev
+
+Then you can have this in the package.json file which is added to your project.
+
+	## 1 "scripts": {
+	## 2    "stylelint": "stylelint ’**/*.scss’"
+	## 3 }
+
+
+## Rules
+
+	1. When you define an tag name, class name or id, there shouldn't be a whitespace before them;
+
+	2. An opening curly brace should be preceded by a space and followed by anything and a new line should be added;
+
+	3. Only 2-space indentation is accepted before writing CSS attributes. You must put a whitespace after a semicolon;
+
+	4. A closing curly brace mustn't be followed by a trailing space;
 
 ### Prerequisites
 
@@ -50,18 +63,12 @@ In your terminal, change directory to the root of the project
 [Live Demo Link](https://repl.it/repls/GoldGiftedMention)
 
 
-## Authors
+## Author
 
 👤 **Abror Mukimov**
 - Github: [abrormukimov](https://github.com/abrormukimov)
 - Linkedin: [abrormukimov](https://www.linkedin.com/in/abrormukimov)
 - Twitter: [abrormukimov](https://www.twitter.com/abrormukimov)
-
-👤 **Eric Mbouwe**
-
-- Github: [@ericmbouwe](https://github.com/ericmbouwe)
-- Twitter: [@ericmbouwe](https://twitter.com/ericmbouwe)
-- Linkedin: [@ericmbouwe](https://www.linkedin.com/in/ericmbouwe/)
 
 ## 🤝 Contributing
 
@@ -85,7 +92,6 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- The Odin Project
 - [Microverse](microverse.org)
 
 
