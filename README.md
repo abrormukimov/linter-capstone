@@ -1,4 +1,4 @@
-# Tic Tac Toe game
+# CSS linter
 
 ![screenshot](images/tictactoe.png)
 
