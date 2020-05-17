@@ -23,10 +23,9 @@ class MyLinter
     puts @semicolon.error_messages.count.to_s + ' semicolon errors'
     puts @spaceaftercolon.error_messages.count.to_s + ' spaceaftercolon errors'
     puts @trailing_space.error_messages.count.to_s + ' trailing space errors'
-    puts
-    @indentation.error_messages.each { |msg| puts 'Line: ' + msg[:line_number].to_s + ', ' + msg[:message] }
-    @semicolon.error_messages.each { |msg| puts 'Line: ' + msg[:line_number].to_s + ', ' + msg[:message] }
-    @spaceaftercolon.error_messages.each { |msg| puts 'Line: ' + msg[:line_number].to_s + ', ' + msg[:message] }
-    @trailing_space.error_messages.each { |msg| puts 'Line: ' + msg[:line_number].to_s + ', ' + msg[:message] }
+    @indentation.error_messages.each { |msg| puts "\nLine: #{msg[:line_number]}, #{msg[:message]}" }
+    @semicolon.error_messages.each { |msg| puts "\nLine: #{msg[:line_number]}, #{msg[:message]}" }
+    @spaceaftercolon.error_messages.each { |msg| puts "\nLine: #{msg[:line_number]}, #{msg[:message]}" }
+    @trailing_space.error_messages.each { |msg| puts "\nLine: #{msg[:line_number]}, #{msg[:message]}" }
   end
 end
