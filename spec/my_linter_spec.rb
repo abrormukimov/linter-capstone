@@ -1,7 +1,7 @@
 require_relative '../lib/my_linter'
 
 describe 'MyLinter' do
-  cssfile = "./resources/cssfile.css"
+  cssfile = './resources/cssfile.css'
   linter = MyLinter.new(cssfile)
   linter.check_errors
 
