@@ -4,19 +4,19 @@ require_relative 'trailing_space.rb'
 require_relative 'spaceaftercolon.rb'
 
 class MyLinter
+
+	attr_reader :file_data, :semicolon, :spaceaftercolon, :indentation, :trailing_space
+
 	def initialize(filename)
 		content = File.open(filename)
-		file_data = content.readlines.map(&:chomp)
-		# file_data.each { |line| puts line }
-		check_errors(file_data)
-		output_errors
+		@file_data = content.readlines.map(&:chomp)
 	end
 
-	def check_errors(filedata)
-		@indentation = IndentationCheck.new(filedata)
-		@semicolon = SemicolonCheck.new(filedata)
-		@spaceaftercolon = SpaceAfterColonCheck.new(filedata)
-		@trailing_space = TrailingSpaceCheck.new(filedata)
+	def check_errors
+		@indentation = IndentationCheck.new(@file_data)
+		@semicolon = SemicolonCheck.new(@file_data)
+		@spaceaftercolon = SpaceAfterColonCheck.new(@file_data)
+		@trailing_space = TrailingSpaceCheck.new(@file_data)
 	end
 
 	def output_errors
@@ -25,9 +25,9 @@ class MyLinter
 		puts @spaceaftercolon.error_messages.count.to_s + ' spaceaftercolon errors'
 		puts @trailing_space.error_messages.count.to_s + ' trailing space errors'
 		puts
-		@indentation.error_messages.each { |msg| p msg }
-		@semicolon.error_messages.each { |msg| p msg }
-		@spaceaftercolon.error_messages.each { |msg| p msg }
-		@trailing_space.error_messages.each { |msg| p msg }
+		@indentation.error_messages.each { |msg| puts 'Line: ' + msg[:line_number].to_s + ', ' + msg[:message] }
+		@semicolon.error_messages.each { |msg| puts 'Line: ' + msg[:line_number].to_s + ', ' + msg[:message] }
+		@spaceaftercolon.error_messages.each { |msg| puts 'Line: ' + msg[:line_number].to_s + ', ' + msg[:message] }
+		@trailing_space.error_messages.each { |msg| puts 'Line: ' + msg[:line_number].to_s + ', ' + msg[:message] }
 	end
 end

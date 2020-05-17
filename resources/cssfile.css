@@ -1,19 +1,19 @@
-html {
-  width: 100%;
-  height: auto;
+ html { 
+   width:100%;
+   height:auto
 }
 
-body {
-  margin: 0 auto;
-  padding: 0;
-}
-
-* {
-  -webkit-box-sizing: border-box;
+ body {
+   margin:0 auto  
+   padding:0; 
+} 
+ 
+ * { 
+-webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-}
+ a { 
+ text-decoration:none
+} 

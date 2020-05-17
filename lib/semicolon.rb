@@ -8,6 +8,21 @@ class SemicolonCheck < ErrorCheck
 	end
 
 	def check_for_errors(filedata)
-		@error_messages << { :line_number => 1, :message => 'Error' }
+		classes = find_classes(filedata)
+		classes.each do |c|
+			check_class(filedata, c)
+		end
 	end
+
+	def check_class(filedata, c)
+		idx = c[0] + 1
+		while idx < c[1]
+			s = filedata[idx].strip
+			if s[s.size - 1] != ';'
+				@error_messages << { :line_number => idx + 1, :message => 'Semicolon missing at the end of line' }				
+			end
+			idx += 1
+		end
+	end
+
 end

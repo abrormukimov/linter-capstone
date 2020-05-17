@@ -8,7 +8,21 @@ class SpaceAfterColonCheck < ErrorCheck
 	end
 
 	def check_for_errors(filedata)
-		@error_messages << { :line_number => 1, :message => 'Error' }
+		classes = find_classes(filedata)
+		classes.each do |c|
+			check_class(filedata, c)
+		end
+	end
+
+	def check_class(filedata, c)
+		idx = c[0]
+		while idx < c[1]
+			s = filedata[idx].strip
+			if s.include?(':') && !s.include?(': ')
+					@error_messages << { :line_number => idx + 1, :message => 'Space after colon is missing' }
+			end
+			idx += 1
+		end
 	end
 
 end

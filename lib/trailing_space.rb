@@ -8,7 +8,11 @@ class TrailingSpaceCheck < ErrorCheck
 	end
 
 	def check_for_errors(filedata)
-		@error_messages << { :line_number => 1, :message => 'Error' }
+		filedata.each_with_index do |line, idx|
+			if line[line.size - 1] == " "
+				@error_messages << { :line_number => idx + 1, :message => 'Trailing space at the of the line' }
+			end
+		end
 	end
 
 end
