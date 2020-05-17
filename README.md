@@ -20,17 +20,17 @@ There are different ways to use Stylelint, such as installing a plugin for your 
 
 Start linting by installing the NPM package on your machine. Open up your terminal and type the following command:
 
-	## 1. npm install -g stylelint
+	$ 1. npm install -g stylelint
 
 The above command installs Stylelint globally. If you prefer to have it project-based, you can do so with the command below:
 
-	## 1. npm install stylelint --save-dev
+	$ 1. npm install stylelint --save-dev
 
 Then you can have this in the package.json file which is added to your project.
 
-	## 1 "scripts": {
-	## 2    "stylelint": "stylelint ’**/*.scss’"
-	## 3 }
+	$ 1 "scripts": {
+	$ 2    "stylelint": "stylelint ’**/*.scss’"
+	$ 3 }
 
 
 ## Rules
@@ -48,7 +48,7 @@ Then you can have this in the package.json file which is added to your project.
 
 If you want to check your errors according to the stylint rules, Open your terminal and type the following command:
 
-	## 1. npx stylelint .
+	$ 1. npx stylelint .
 
 
 ### Prerequisites
