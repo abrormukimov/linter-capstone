@@ -60,6 +60,11 @@ If you want to check your errors according to the stylint rules, Open your termi
 
 	$ 1. npx stylelint .
 
+If your code has any errors, linter displays what kind of errors you have and which line the error appeared.
+You can simply go that line and fix it.
+
+![screenshot](images/scr.png)
+
 
 ### Prerequisites
 
