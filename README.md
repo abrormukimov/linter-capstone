@@ -8,6 +8,16 @@
 
 As front end developers we hope that the code we write will be shipped to production and enjoyed by the users of our product. We spend a huge amount of time ensuring that we write code that is free of bugs and errors. But how many of these errors can we figure out without actually running the code? This is where tests come in, though there are certainly things that tests will not pick up, or might not be tested for at all.
 
+# Set-up Stickler (Github app) - it will show that your app is free from style errors
+
+Install [stickler-ci](https://github.com/apps/stickler-ci)
+Enable stickler in your repo. To do that, go to this [link](https://stickler-ci.com/)  
+
+In first commit of your feature branch add a copy of .stickler.yml and stylelint.config.js to the root directory.
+Remember to use both files linked above
+
+When you open your first pull request you should see Stickler's report at Checks tab.
+
 ## Built With
 
 - Ruby
